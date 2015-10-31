@@ -2,30 +2,15 @@
 
 <#
 .SYNOPSIS
-   
-.DESCRIPTION
-	
-.PARAMETER
-	
-.PARAMETER 
 
-
-.EXAMPLE
-
-	
-.EXAMPLE
-
+Use "Get-Help Get-SWObject -Online" to get the latest help.
 
 .NOTES
     -Version: 1.0
 	-Author: Stéphane van Gulick 
-	-CreationDate:
-	-LastModifiedDate: 
-	-History:
-		02/08/2012: Comment : trigram
 
  .LINK
-http://www.powerShellDistrict.com
+http://powershelldistrict.com/posh-starwars/
  
  .LINK
 https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
@@ -33,7 +18,9 @@ https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
 	
 #>
 
-[cmdletBinding()]
+[CmdletBinding(
+        HelpURI='http://powershelldistrict.com/posh-starwars/'
+    )]
 Param(
     
         [Parameter(Mandatory=$false)]
@@ -117,6 +104,23 @@ Process{
 }
 
 Function Get-SWPeople{
+<#
+.SYNOPSIS
+
+Use "Get-Help Get-SWPeople -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
 
     [cmdletBinding(
         DefaultParameterSetName = 'all'
@@ -154,7 +158,7 @@ Function Get-SWPeople{
         
     )
 
-    #9pages
+
   
   $BaseArguments = @{Type = 'People';Encoding=$Encoding}
   $AdditionalArguments = @{}
@@ -190,6 +194,23 @@ Function Get-SWPeople{
 }
 
 Function Get-SWSpecies{
+<#
+.SYNOPSIS
+
+Use "Get-Help Get-SWSpecies -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
 
     [cmdletBinding(
         DefaultParameterSetName = 'all'
@@ -273,7 +294,23 @@ Function Get-SWSpecies{
 }
 
 Function Get-SWPlanet{
+<#
+.SYNOPSIS
 
+Use "Get-Help Get-SWPlanet -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
     [cmdletBinding(
         DefaultParameterSetName = 'all'
     )]
@@ -346,7 +383,23 @@ Function Get-SWPlanet{
 }
 
 Function Get-SWstarship{
+<#
+.SYNOPSIS
 
+Use "Get-Help Get-SWStarShip -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
     [cmdletBinding(
        DefaultParameterSetName = 'all'
     )]
@@ -434,7 +487,23 @@ Function Get-SWstarship{
 }
 
 Function Get-SWVehicule{
+<#
+.SYNOPSIS
 
+Use "Get-Help Get-SWVehicule -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
     [cmdletBinding(
        DefaultParameterSetName = 'all'
     )]
@@ -522,7 +591,23 @@ Function Get-SWVehicule{
 }
 
 Function Get-SWFilm{
+<#
+.SYNOPSIS
 
+Use "Get-Help Get-SWFilm -Online" to get the latest help.
+
+.NOTES
+    -Version: 1.0
+	-Author: Stéphane van Gulick 
+
+ .LINK
+http://powershelldistrict.com/posh-starwars/
+ 
+ .LINK
+https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
+    
+	
+#>
     [cmdletBinding(
        DefaultParameterSetName = 'all'
     )]
