@@ -1,3 +1,8 @@
+#version: 0.4
+#Author: Stéphane van Gulick
+#twitter: @stephanevg
+#WebSite: http://powershelldistrict.com/posh-starwars/
+
 enum SWobjectType {
     people
     planet
