@@ -1,4 +1,79 @@
-﻿Function Get-SWObject {
+﻿#region Helper Functions
+
+Function ConvertTo-Base64String {
+Param(
+    [String]$String,
+    [String]$Image
+
+)
+    if ($String){
+        $Bytes  = [System.Text.Encoding]::UTF8.GetBytes($String)
+    }else{
+        $bytes = Get-Content -Path $Image -Encoding Byte
+    }
+    [System.Convert]::ToBase64String($Bytes)
+
+}
+
+Function Display-Image {
+[cmdletBinding()]
+    Param(
+        $image,
+        [int]$TimeToDisplay
+    )
+
+
+    [void][reflection.assembly]::LoadWithPartialName('System.Windows.Forms')
+
+    $file = (get-item $image)
+    
+    
+    $img = [System.Drawing.Image]::Fromfile($file);
+
+    # This tip from http://stackoverflow.com/questions/3358372/windows-forms-look-different-in-powershell-and-powershell-ise-why/3359274#3359274
+    [System.Windows.Forms.Application]::EnableVisualStyles();
+    $form = new-object Windows.Forms.Form
+    $form.Text = 'Image Viewer'
+    $form.Width = $img.Size.Width;
+    $form.Height =  $img.Size.Height;
+    $form.FormBorderStyle = 'none'
+    $pictureBox = new-object Windows.Forms.PictureBox
+    $pictureBox.Width =  $img.Size.Width;
+    $pictureBox.Height =  $img.Size.Height;
+
+    $pictureBox.Image = $img;
+    $form.controls.add($pictureBox)
+    $form.Add_Shown( { $form.Activate() } )
+    [int]$count = 1
+    
+    Start-WavFile -File "C:\Users\Stephane\OneDrive\Scripting\Repository\Projects\Modules\Posh-StarWars\Sounds\chewy1.wav"    
+
+    $form.Show()
+    while ($TimeToDisplay -gt 0){
+        write-verbose "Waiting $($TimeToDisplay) before closing window."
+        Start-Sleep 1
+        $TimeToDisplay--
+    }
+    #$form.ShowDialog()
+    
+    $form.Close()
+}
+
+Function Start-WavFile {
+    [CmdletBinding()]
+    Param(
+        $File
+    )
+
+    $player = New-Object System.Media.SoundPlayer $File
+    $player.Play()
+}
+
+#endregion
+
+#region SW Data Functions
+
+Function Get-SWObject {
 
 <#
 .SYNOPSIS
@@ -693,3 +768,5 @@ https://social.technet.microsoft.com/profile/st%C3%A9phane%20vg/
   return $Return
 
 }
+
+#endregion
