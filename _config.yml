@@ -1,2 +1,2 @@
 baseurl: /posh-starwars
-exclude: ['README.md','Classy posh-starwars.psm1','license','posh-starwars.psm1']
+exclude: ['README.md','Classy posh-starwars.psm1','license','posh-starwars.psm1','Images','Sounds']
