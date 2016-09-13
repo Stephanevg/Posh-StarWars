@@ -4,18 +4,19 @@
         <title>
             Posh-StarWars
         </title>
+        {% include banner.html %}
     </head>
     <body>
         
         <header>
-            <nav>
-                <ul>
-                    <li><a href="{{site.baseurl}}/index.html">home</a></li>
-                    <li><a href="{{site.baseurl}}/news.html">News</a></li>
-                </ul>
-            </nav>
+            <h2>Navigation</h2>
+            {% include nav.html %}
         </header>
         
         {{content}}
+        <footer>
+            {% include nav.html %}
+            <p>caption</p>
+        </footer>
     </body>
 </html>
