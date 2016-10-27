@@ -46,7 +46,7 @@ Function Display-Image {
     $form.Add_Shown( { $form.Activate() } )
     [int]$count = 1
     
-    Start-WavFile -File "C:\Users\Stephane\OneDrive\Scripting\Repository\Projects\Modules\Posh-StarWars\Sounds\chewy1.wav"    
+    #Start-WavFile -File "C:\Users\Stephane\OneDrive\Scripting\Repository\Projects\Modules\Posh-StarWars\Sounds\chewy1.wav"    
 
     $form.Show()
     while ($TimeToDisplay -gt 0){
