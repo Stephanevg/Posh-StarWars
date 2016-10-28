@@ -423,3 +423,6 @@ Class SWFilm : SWObject{
 $VerbosePreference = 'continue'
 #$Array = [SWobject[]]
 #$Movies = [swFilm]::new(1)
+
+$ChewBacca = [swpeople]::new(13)
+$ChewBacca.ShowPicture()
